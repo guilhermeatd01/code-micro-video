@@ -21,3 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['namespace' => 'App\Http\Controllers\Api'], function() {
     Route::resource('categories', 'CategoryController', ['except' => ['create', 'edit']]);
 });
+
+Route::group(['namespace' => 'App\Http\Controllers\Api'], function() {
+    Route::resource('genres', 'GenreController', ['except' => ['create', 'edit']]);
+});
