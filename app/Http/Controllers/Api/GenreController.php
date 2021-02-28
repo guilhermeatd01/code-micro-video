@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class GenreController extends Controller
 {
     private $rules = [
-        'name' => 'required|max:255'
+        'name' => 'required|max:255',
+        'is_active' => 'boolean'
     ];
 
     public function index()
@@ -21,7 +22,9 @@ class GenreController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, $this->rules);
-        return Genre::create($request->all());
+        $genre = Genre::create($request->all());
+        $genre->refresh();
+        return $genre;
     }
 
     public function show(Genre $genre)
