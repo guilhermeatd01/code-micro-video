@@ -4,8 +4,6 @@ namespace Tests\Feature\Models;
 
 use App\Models\Category;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class CategoryTest extends TestCase
@@ -42,7 +40,7 @@ class CategoryTest extends TestCase
         $this->assertEquals(36, strlen($category->id));
         $this->assertEquals('test1', $category->name);
         $this->assertNull($category->description);
-        $this->assertTrue((bool)$category->is_active);
+        $this->assertTrue($category->is_active);
 
         $category = Category::create([
             'name' => 'test1',
