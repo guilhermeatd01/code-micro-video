@@ -3,7 +3,6 @@
 namespace Tests\Unit\Models;
 
 use App\Models\Category;
-use App\Models\Genre;
 use Tests\TestCase;
 use App\Models\Traits\Uuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
