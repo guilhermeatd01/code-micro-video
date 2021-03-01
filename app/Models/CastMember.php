@@ -22,7 +22,7 @@ class CastMember extends Model
     protected $dates = ['deleted_at'];
     protected $casts = [
         'id' => 'string',
-        'is_active' => 'boolean'
+        'type' => 'integer'
     ];
 
     public $incrementing = false;
